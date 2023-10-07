@@ -2,7 +2,7 @@ pipeline {
     agent any 
 
     stages {
-        // Stage 1: Build
+        // Stage 1: Build Stage
         // Description: Compile the source code and create build artifacts. This ensures that the code is free of syntax errors and is ready for further stages.
         // Tool: Maven (for Java projects). Alternatives: Gradle (for Java), npm (for JavaScript/Node.js).
         stage('Build') {
