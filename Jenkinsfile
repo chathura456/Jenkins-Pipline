@@ -2,10 +2,16 @@ pipeline {
     agent any
 
     stages {
-       
         stage('Build') {
             steps {
                 echo 'Building the project...'
+            }
+            post {
+                success {
+                    mail to: "dreamshadesnew@gmail.com",
+                         subject: "Test Email 1",
+                         body: "Build Success"
+                }
             }
         }
 
@@ -19,12 +25,6 @@ pipeline {
             steps {
                 echo 'Deploying the project...'
             }
-        }
-    }
-
-    post {
-        always {
-            echo 'Pipeline finished!'
         }
     }
 }
