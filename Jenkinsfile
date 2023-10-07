@@ -7,7 +7,7 @@ pipeline {
         // Tool: Maven (for Java projects). Alternatives: Gradle (for Java), npm (for JavaScript/Node.js).
         stage('Build') {
             steps {
-                echo 'Building the code...'
+                echo 'Building the code....'
             }
         }
 
@@ -16,7 +16,7 @@ pipeline {
         // Tool: JUnit (for Java unit tests), TestNG (for Java integration tests), Mocha (for JavaScript).
         stage('Unit and Integration Tests') {
             steps {
-                echo 'Running unit and integration tests...'
+                echo 'Running unit and integration tests....'
             }
             post {
                 success {
@@ -51,12 +51,12 @@ pipeline {
             post {
                 success {
                     mail to: 'dreamshadesnew@gmail.com',
-                         subject: "Security Scan completed successfully",
+                         subject: "Security Scan completed successfully!!",
                          body: "Security Scan stage completed successfully."
                 }
                 failure {
                     mail to: 'dreamshadesnew@gmail.com',
-                         subject: "Security Scan failed",
+                         subject: "Security Scan failed!",
                          body: "The Security Scan stage failed. Check the attached log for details."
                 }
             }
